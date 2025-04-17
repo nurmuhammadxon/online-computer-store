@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+    --font-primary: "Poppins", sans-serif;
+    --color-brand-primary: #0156FF;
+    --color-text-muted: #A2A6B0;
+    --color-bg-light: #F5F7FF;
+    --color-success: #78A962;
+    --color-warning: #FFB800;
+    --color-text-dark: #666666;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+
+input[type="search"]::-moz-search-cancel-button {
+    display: none;
+}
