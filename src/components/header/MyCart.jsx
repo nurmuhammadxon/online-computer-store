@@ -19,10 +19,14 @@ function MyCart({
     const location = useLocation();
 
     // useEffect(() => {
-    //     if (isShopCart) {
-    //         setIsShopCart(false);
-    //     }
+    //     setIsShopCart(false);
+
     // }, [location.pathname]);
+
+    const handeleChacout = () => {
+        navigate('/cart')
+        setIsShopCart(false)
+    }
 
     const subtotal = () => {
         return myData.reduce((acc, item) => acc + parseFloat(item.price), 0)
@@ -41,7 +45,7 @@ function MyCart({
                         title='View or Edit Your Cart'
                         BorderColor='#0156FF'
                         TextColor='#0156FF'
-                        onClick={() => navigate('/cart')}
+                        onClick={handeleChacout}
                     />
                     <span className='absolute -top-7 right-0 size-3 rotate-45 rounded-[2px]'></span>
                 </div>

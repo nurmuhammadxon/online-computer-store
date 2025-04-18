@@ -12,6 +12,9 @@ import DetailsProducts from './components/ProductAboutLayout/DetailsProducts';
 import SpecsProducts from './components/ProductAboutLayout/SpecsProducts';
 import ContactPage from './pages/ContactPage';
 import LoginPage from './pages/LoginPage';
+import ShopingCart from './pages/ShopingCart';
+import CheckountPage from './pages/CheckountPage';
+import CartLayout from './layouts/CartLayout';
 
 function App() {
   const router = createBrowserRouter([
@@ -71,6 +74,20 @@ function App() {
         {
           path: 'login',
           element: <LoginPage />
+        },
+        {
+          path: 'cart',
+          element: <CartLayout />,
+          children: [
+            {
+              index: true,
+              element: <ShopingCart />
+            },
+            {
+              path: 'checkout',
+              element: <CheckountPage />
+            }
+          ]
         }
       ]
     }

@@ -21,7 +21,7 @@ function ButtonComponent({
         padding: `${paddingY} ${paddingX}`,
         fontSize,
         fontWeight,
-        border: border ? `${border}px solid ${BorderColor}` : 'none',
+        border: border !== 'none' ? `${border}px solid ${BorderColor}` : 'none',
         borderRadius: `${BorderRadius}px`,
         cursor: 'pointer',
     };

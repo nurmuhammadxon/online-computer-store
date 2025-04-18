@@ -1,9 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Account({
     setIsMenu
 }) {
+
+    const navigate = useNavigate()
 
     const accountTitleList = [
         {
@@ -43,6 +45,11 @@ function Account({
         }
     ]
 
+    const handelButton = (link) => {
+        navigate(link)
+        setIsMenu(false)
+    }
+
     return (
         <>
             <div className='w-[232px] bg-white py-3 px-6 absolute top-28 right-64 z-50 rounded-md shadow-md'>
@@ -51,12 +58,12 @@ function Account({
                         accountTitleList.map(item => {
                             return (
                                 <li key={item.id}>
-                                    <Link
-                                        to={item.link}
-                                        className='font-medium text-sm'
+                                    <button
+                                        className='font-medium text-sm cursor-pointer'
+                                        onClick={() => handelButton(item.link)}
                                     >
                                         {item.title}
-                                    </Link>
+                                    </button>
                                 </li>
                             )
                         })
